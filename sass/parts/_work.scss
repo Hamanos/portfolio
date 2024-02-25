@@ -1,0 +1,223 @@
+@use "variable"as v;
+
+/*======================================================
+  work
+======================================================*/
+
+.sec-title {
+    font-family: 'Josefin Sans', sans-serif;
+    display: block;
+    font-size: v.rem(24);
+    color: v.$c-bg;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    margin: 0.5rem auto 1rem;
+
+    &-1.displayed {
+        width: 16ch;
+        animation: typing 2s steps(14), effect .5s step-end infinite alternate;
+    }
+    &-2.displayed {
+        width: 5ch;
+        animation: typing 0.8s steps(5), effect .5s step-end infinite alternate;
+    }
+    &-3.displayed {
+        width: 5ch;
+        animation: typing 0.8s steps(5), effect .5s step-end infinite alternate;
+    }
+    &-4.displayed {
+        width: 15ch;
+        animation: typing 2s steps(14), effect .5s step-end infinite alternate;
+    }
+    &-5.displayed {
+        width: 4ch;
+        animation: typing 0.8s steps(4), effect .5s step-end infinite alternate;
+    }
+}
+// .typing-effect {
+//     width: 14ch;
+//     animation: typing 3s steps(23), effect .5s step-end infinite alternate;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     border-right: 3px solid;
+//     font-family: monospace;
+//     font-size: 2em;
+//   }
+   
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes effect {
+    50% {
+      border-color: transparent
+    }
+  }
+/* タブメニュー */
+.tab {
+    margin-top: 2rem;
+}
+
+.tab__menu {
+    display: flex;
+    align-items: center;
+    /* メニューを下揃え&高さを調整 */
+    justify-content: center;
+    min-height: 50px;
+    /* メニュー切替時にタブがズレないように */
+    padding: 0;
+    margin: 0;
+}
+
+.tab__menu-item {
+    list-style: none;
+    width: 200px;
+    padding: 8px 5px;
+    /* メニューに高さを付ける */
+    text-align: center;
+    margin-right: 6px;
+    color: v.$c-bg;
+    border-radius: 10px;
+    border: 1px solid v.$c-bg;
+    cursor: pointer;
+    transition: all .3s;
+    /* アニメーション */
+}
+
+.tab__menu-item:last-of-type {
+    margin-right: 0px;
+}
+
+/* is-activeがついている時のスタイル */
+.tab__menu-item.is-active {
+    background-color: v.$c-bg;
+    color: v.$c-font;
+    padding: 12px 5px;
+}
+
+.tab__panel-box001,
+.tab__panel-box002,
+.tab__panel-box003,
+.tab__panel-box004 {
+    display: none;
+}
+.tab__panel-box002.is-show {
+    display: block;
+}
+
+/* is-showがついている時のスタイル */
+.tab__panel-box.is-show {
+    display: block;
+  }
+
+// グリッド
+/* Container
+---------------------------------------------------------------------- */
+
+.container {
+    padding: 2rem 5%;
+    text-align: justify;
+    font-size: 0.1px;
+}
+
+.container:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+}
+
+/* Target Elements
+---------------------------------------------------------------------- */
+
+.mix,
+.gap {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.mix {
+    background: #fff;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    position: relative;
+    
+    img {
+        object-fit: cover;
+        border-radius: 2px;
+    }
+}
+
+.mix:before {
+    content: '';
+    display: inline-block;
+    padding-top: 56.25%;
+}
+
+.mix,
+.gap {
+    width: v.grid-item-width(3, 1rem); // calc(50% - 0.5rem)
+}
+
+/*
+モーダル
+===========================================================*/
+#mask {
+    background: rgba(0, 0, 0, .6);
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+}
+#modal {
+    color: #000;
+    background: #fff;
+    width: 50%;
+    padding: 2rem;
+    border-radius: .5rem;
+    position: fixed;
+    inset: 10rem 0 auto;
+    margin: auto;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    right: -120%;
+
+    iframe {
+        height: 90vh;
+        overflow: scroll;
+    }
+}
+
+.wrok_image_mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    cursor: pointer;
+  }
+  
+  
+
+.mix:hover .wrok_image_mask {
+    opacity: 1;
+    padding-top: 13%;
+  }
+  
+  .mix:hover .mask_text {
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    margin-top: 2rem;
+  }
+  

@@ -1,0 +1,31 @@
+//変数準備
+$c-gray-1: #666;
+$c-gray-2: #ddd;
+$c-yellow: #ffdf17;
+$c-font: #333;
+$c-bg: #fafafa;
+$line: 5px double $c-font;
+
+//関数準備
+@function rem($px, $base: 16) {
+  @return $px / $base * 1rem;
+}
+
+@function grid-item-width($columns, $gutter) {
+  @return calc(#{100% / $columns} - #{($gutter * ($columns - 1)) / $columns});
+}
+
+//mediaquery
+$pc: 769px;
+$sp: 767px;
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}

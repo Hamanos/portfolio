@@ -1,0 +1,42 @@
+@use "variable"as v;
+
+/*======================================================
+  prf
+======================================================*/
+#prf {
+position: relative;
+  h3 {
+    font-family: 'Dosis', sans-serif;
+  }
+
+  img {
+    max-width: 250px;
+    height: auto;
+    border-radius: 30px;
+  }
+}
+
+.wakusei {
+  position: absolute;
+  animation: idou 4s ease-in-out infinite alternate;
+  background: url(../img/anime-v.gif) no-repeat center center / 250px auto;
+  display: inline-block;
+  transition: 1.5s ease-in-out;
+  width: 300px;
+  height: 300px;
+  margin-top: 15px;
+  bottom: 10%;
+  left: 2%;
+}
+
+@keyframes idou {
+  0% {
+    transform:translate(0, 0);
+  }
+  50% {
+    transform:translate(0, -10px) ;
+  }
+  100% {
+    transform:translate(0, 0) ;
+  }
+}

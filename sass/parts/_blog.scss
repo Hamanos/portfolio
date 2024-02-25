@@ -1,0 +1,17 @@
+@use "variable"as v;
+
+/*======================================================
+  blog
+======================================================*/
+.blog-container {
+  padding: 1rem 4rem 5rem 4rem;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+iframe {
+  width: 90%;
+  scroll-behavior: auto;
+}

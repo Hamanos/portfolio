@@ -1,0 +1,180 @@
+@use "variable"as v;
+
+/*======================================================
+--top設定
+======================================================*/
+header {
+  margin: 0.5rem 0;
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  img {
+    fill: v.$c-font;
+  }
+}
+
+.main-title {
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+  font-size: v.rem(16);
+  color: v.$c-font;
+  height: 1em;
+  line-height: 1;
+  letter-spacing: -0.1em;
+  pointer-events: visiblePainted;
+  z-index: 4;
+  &2 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: v.rem(48);
+    color: v.$c-font;
+    padding-left: 4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    width: 10ch;
+        animation: typing 1s steps(7), effect .5s step-end infinite alternate;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes effect {
+  50% {
+    border-color: transparent
+  }
+}
+
+.gnav {
+  font-family: 'Josefin Sans', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  &__list {
+    display: flex;
+    margin: 0 5rem;
+  }
+
+  &__item + &__item {
+    padding-left: 2rem;
+  }
+}
+
+.parallax::before {
+  background-image: url("../img/hero2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+
+.kv-block {
+  height: 100vh;
+  background-image: url("../img/sennnai.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -9999px;
+  overflow: hidden;
+  display:flex;
+  flex-flow: column;
+  justify-content:center;
+  padding: 1.8rem 0 1rem;
+}
+
+#canvas {
+  width: 100%;
+  pointer-events: none;
+}
+
+.btn button {
+  pointer-events: none;
+  font-size: v.rem(15);
+  width: 60px;
+
+  // border: 2px solid #333;
+  // border-radius: 50%;
+  position: relative;
+  // top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: down 1.8s infinite;
+  -webkit-animation: down 1.5s infinite;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 22px;
+    width: 15px;
+    height: 15px;
+    border-left: 2px solid #333;
+    border-bottom: 2px solid #333;
+    transform: rotate(-45deg);
+  }
+}
+
+@keyframes down {
+  0% {
+    transform: translateX(-50%);
+  }
+  20% {
+    transform: translate(-50%, 15px);
+  }
+  40% {
+    transform: translateX(-50%);
+  }
+}
+
+// @-webkit-keyframes down {
+//   0% {
+//     transform: translateX(0);
+//   }
+//   20% {
+//     transform: translateY(15px);
+//   }
+//   40% {
+//     transform: translateX(-50%);
+//   }
+// }
+
+
+
+@media screen and (max-width: 640px) {
+  .main-title {
+    font-size: v.rem(20);
+  }
+}
+
+.text+.text {
+  margin-top: 1em;
+}
+
+.contents-block {
+  padding: 40px 0;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 22px;
+    line-height: 1.4;
+  }
+}

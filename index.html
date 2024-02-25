@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="概要">
+  <!-- three.js -->
+  <script src="https://unpkg.com/three@0.147.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.147.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://unpkg.com/three@0.147.0/examples/js/loaders/OBJLoader.js"></script>
+  <!-- 自作　js -->
+  <script src="js/model.js" defer></script>
+  <script src="js/index.js" defer></script>
+  <script src="js/modal.js" defer></script>
+
+  <!-- css -->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+  <title>Sumire Hamano</title>
+</head>
+
+<body id="home">
+  <header>
+    <div class="gnav">
+      <a href="#home">
+        <h1 class="main-title">Hamanos</h1>
+      </a>
+      <ul class="gnav__list">
+        <li class="gnav__item"><a href="#home">Home</a></li>
+        <li class="gnav__item"><a href="#about">About</a></li>
+        <li class="gnav__item"><a href="#work">Work</a></li>
+        <li class="gnav__item"><a href="#skill">Skill</a></li>
+        <li class="gnav__item"><a href="#prf">Profile</a></li>
+        <li class="gnav__item"><a href="#blog">Blog</a></li>
+      </ul>
+      <a href="https://x.com/tappi2323?t=SKi4M3x1GuT4rGR1qDfh2g&s=09" target="_blank" rel="noopener noreferrer"><img src="img/xlogo.svg" alt="X" width="20" height="20"></a>
+    </div>
+  </header>
+  <section class="kv-block outer-block contents">
+    <canvas id="canvas" class="fadeTarget"></canvas>
+    <div class="parallax"></div>
+    <!-- <div id="kv" class="fadeTarget"></div> -->
+    <h1 class="main-title2">Hamanos</h1>
+    <div class="btn">
+      <button>scroll</button>
+    </div>
+
+  </section>
+  <div class="wrapper">
+    <section id="about" class="contents">
+      <h2 class="sec-title-1 sec-title">What's Hamanos ?</h2>
+      <p>はじめまして、Hamanosです。<br>
+        「Hamanos」と書いて「はまのす」と読みます。<br>
+        所有を表す「Hamano's ○○」、フルネームをの名の頭文字までを区切ると「Hamano S」 この2つを掛け合わせています。Hamano's ○○としたのは、カテゴリーに囚われない多角的な視点で問題解決を目指したいとの思いがあります。</p>
+        <div class="object"></div>
+    </section>
+    <section id="work" class="contents">
+      <h2 class="sec-title-2 sec-title">Work</h2>
+      <div class="tab">
+        <ul class="tab__menu">
+          <li class="tab__menu-item is-active" data-tab="01">All</li>
+          <li class="tab__menu-item" data-tab="02" id="btn1">HP・LP</li>
+          <li class="tab__menu-item" data-tab="03" id="btn2">Banner</li>
+          <li class="tab__menu-item" data-tab="04">Other</li>
+        </ul>
+        <div class="tab__panel">
+          <div class="tab__panel-box tab__panel-box001 is-show" data-panel="01">
+            <div id="con1" class="container">
+              <div class="mix"><button><img src="img/kajimurashop_s.jpg" alt="健康堂サイト">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">有限会社　梶村商店</div>
+                  </div>
+                </button>
+              </div>
+              <div class="mix"><button><img src="img/kennkodo_s.jpg" alt="" width="1000" height="560">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">「健康どう？」のホームページ</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/bn4_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">BtoBバナー</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/bn3_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">BtoCバナー</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/pk1_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">食品パッケージ</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/meishi_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">自作名刺</div>
+                  </div>
+                </button></div>
+            </div>
+          </div>
+          <div class="tab__panel-box tab__panel-box002" data-panel="02">
+            <div id="con2" class="container">
+              <div class="mix"><button><img src="img/kajimurashop_s.jpg" alt="梶村商店サイト">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">有限会社　梶村商店</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/kennkodo_s.jpg" alt="健康堂サイト">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">「健康どう？」HP</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/mujin_s.jpg" alt="ムジンサイト">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">山梨県を盛り上げるコミュニティ<br>MUJIN</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/portfolio_s.jpg" alt="ポートフォリオサイト">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">Portfolio Site</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/profile_s.jpg" alt="自己紹介サイト">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">Profile Site</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/lefttop_s.jpg" alt="グループサイト">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">Team Site<br>Leftop</div>
+                  </div>
+                </button></div>
+            </div>
+          </div>
+          <div class="tab__panel-box tab__panel-box003" data-panel="03">
+            <div id="con3" class="container">
+              <div class="mix"><button><img src="img/bn4_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">BtoBバナー</div>
+                  </div>
+                </button>
+              </div>
+              <div class="mix"><button><img src="img/bn3_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">BtoCバナー</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/bn2_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">ECサイトバナー</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/bn1_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">バナーコンペ</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/bn5_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">バナー模写</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/bn6_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">バナー模写</div>
+                  </div>
+                </button></div>
+            </div>
+          </div>
+          <div class="tab__panel-box tab__panel-box004" data-panel="04">
+            <div id="con4" class="container">
+              <div class="mix"><button><img src="img/pk1_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">食品パッケージ</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/pk2_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">化粧品パッケージ</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/meishi_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">自作名刺</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/supu_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">製品パッケージ</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/icon_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">ECアイコン</div>
+                  </div>
+                </button></div>
+              <div class="mix"><button><img src="img/cm_s.jpg" alt="">
+                  <div class="wrok_image_mask">
+                    <div class="mask_text">自作CM</div>
+                  </div>
+                </button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <section id="modal">
+      <div id="contents"></div>
+      <button id="close">✖</button>
+    </section>
+
+    <div id="mask"></div>
+    <section id="skill" class="contents">
+      <h2 class="sec-title-3 sec-title">Skill</h2>
+      <div class="skill-container">
+        <div class="skill-container-in">
+          <ul class="skill_list">
+            <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-1" data-modal-open="modal-1">
+                  <img src="img/skill-icons/studio.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-1">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>STUDIO</h1>
+                        <p>授業時間：約12時間</p>
+                        <p>実際に動かして学習しました。
+                          カンプ通りにサイトを作成したり、チームに分かれてポートフォリオサイトを作成しました。</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-2" data-modal-open="modal-2">
+                  <img src="img/skill-icons/figma.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-2">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>Figma</h1>
+                        <p>授業時間：43時間</p>
+                        <p>パソコンスクールHA＊NA講師オリジナル教材を用いて学習。
+                          操作を基礎から学びデザインカンプの作成等
+                          実践で活用できるための学習をしました。</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-3" data-modal-open="modal-3">
+                  <img src="img/skill-icons/illustrator.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-3">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>Illustrator 2023</h1>
+                        <p>授業時間：56時間</p>
+                        <p>パソコンスクールHA＊NA講師オリジナル教材を用いて学習。
+                          ツールの使い方を基礎から学び、カンプやバナーなどを作成しました。</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-4" data-modal-open="modal-4">
+                  <img src="img/skill-icons/photo.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-4">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>Photoshop 2023</h1>
+                        <p>授業時間：52時間</p>
+                        <p>パソコンスクールHA＊NA講師オリジナル教材を用いて学習。
+                          基本操作から実務で使える画像加工など様々なテクニックを学びました。</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-5" data-modal-open="modal-5">
+                  <img src="img/skill-icons/css.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-5">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>CSS3</h1>
+                        <p>レイアウトの構築、サイズの設定、色彩設計、要素の配置、レシポンシブWeb デザインの導入など、Webサイトのレイアウトデザインの構成について学びました。</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-6" data-modal-open="modal-6">
+                  <img src="img/skill-icons/html.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-6">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>HTML5</h1>
+                        <p>Web標準に準拠したコーディング、各ブラウザによる表示確認、SEO対策、アクセビリティ対策、バリデートなど、Webサイト制作に必須のマークアップ言語であるHTMLを基礎からしました。</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-7" data-modal-open="modal-7">
+                  <img src="img/skill-icons/powerpoint.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-7">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>Office365</h1>
+                        <p>授業時間：61時間</p>
+                        <p>ビジネス文書、プレゼン資料作成等、幅広く使用されているオフィス365を学びました。基礎的なことから応用編まで幅広く学びました。</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <!-- <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-8" data-modal-open="modal-8">
+                  <img src="img/skill-icons/studio.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-8">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>モーダル3</h1>
+                        <p>モーダル3の文章です！</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li> -->
+            <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-9" data-modal-open="modal-9">
+                  <img src="img/skill-icons/javascript_icon_130900.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-9">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>JavaScript</h1>
+                        <p>授業時間：58時間</p>
+                        <p>JavaScriptプログラミングプログラミング（変数、条件分岐、反復処理、 Web コンテンツとの連携）、DOM 操作、jQuery を使った UI 部品の作成、 Ajax 、プラグインの利用について学びました。</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-10" data-modal-open="modal-10">
+                  <img src="img/skill-icons/wordpress.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-10">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>WordPress</h1>
+                        <p>WordPressの仕組みと動作環境、 PHP基礎知識、テーマファイルとテンプレート作成、ウィジェット機能の利用、カスタムメニュー機能、プラグインの利用について学びました。</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li>
+            <!-- <li class="skill_item skill_item-1">
+              <div class="skill_image">
+                <div class="skill_modal_open skill_modal_open-11" data-modal-open="modal-11">
+                  <img src="img/skill-icons/studio.svg" alt="" width="50">
+                </div>
+                <div class="skill_modal_wrapper" data-modal="modal-11">
+                  <div class="skill_modal_mask"></div>
+                    <div class="skill_modal_window">
+                      <div class="skill_modal_content">
+                        <h1>モーダル3</h1>
+                        <p>モーダル3の文章です！</p>
+                      </div>
+                      <div class="skill_modal_close">✖</div>
+                    </div>
+                </div>
+              </div>
+            </li> -->
+           </ul>
+        </div>
+      </div>
+    </section>
+    <section id="prf" class="contents">
+      <h2 class="sec-title-4 sec-title">Hamano's Profile</h2>
+      <img src="img/rinngo.png" alt="はまのすみれ">
+      <p>
+        名前:濵野 すみれ<br>
+        ニックネーム:ハマノス　マーブル
+      </p>
+      <p>
+        地上でのコミュニケーション力が高い宇宙人です。
+      </p>
+      <h3>base_data</h3>
+      <p>
+        誕生日: 1998.05.06<br>
+        趣味: 3DCAD,音楽を聴くこと,コーヒー<br>
+        特技: メルカリで【おすすめ順】欄に商品を載せること<br>
+      </p>
+      <h3>work</h3>
+      <p>
+        前職の業務: アパレル店の副店長<br>
+        職歴: ローソンクルー（約3年 学生時）、アパレル店の副店長（約2年）
+      </p>
+      <div class="wakusei"></div>
+    </section>
+    <section id="blog" class="contents">
+      <h2 class="sec-title-5 sec-title">Blog</h2>
+      <div class="blog-container">
+        <iframe class="note-embed" src="https://note.com/embed/notes/n3bab022b0d2f" style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" height="400"></iframe>
+        <script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
+        <iframe class="note-embed" src="https://note.com/embed/notes/nf3182eb98ae9" style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" height="400"></iframe>
+        <script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
+        <iframe class="note-embed" src="https://note.com/embed/notes/n83fe3d1e62a7" style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" height="400"></iframe>
+        <script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
+        <iframe class="note-embed" src="https://note.com/embed/notes/n3e212fd25caf" style="border: 0; display: block; max-width: 99%; width: 494px; padding: 0px; margin: 10px 0px; position: static; visibility: visible;" height="400"></iframe>
+        <script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
+      </div>
+    </section>
+  </div>
+  <footer>
+    <small class="copyright">&copy;2023 Sumire Hamano</small>
+  </footer>
+  <a href="#top" class="top__link" id="page-top">page<br>top</a>
+</body>
+
+</html>
